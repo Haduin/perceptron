@@ -1,3 +1,5 @@
+package pl.chodan;
+
 import java.util.List;
 
 public class Perceptron {
@@ -49,7 +51,7 @@ public class Perceptron {
 
     @Override
     public String toString() {
-        return "Perceptron{" +
+        return "pl.chodan.Perceptron{" +
                 "inputs=" + inputs +
                 ", weights=" + weights +
                 ", y=" + y +

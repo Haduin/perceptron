@@ -1,3 +1,5 @@
+package pl.chodan;
+
 import java.util.List;
 
 public class Data {
@@ -28,7 +30,7 @@ public class Data {
 
     @Override
     public String toString() {
-        return "Data{" +
+        return "pl.chodan.Data{" +
                 "inputs=" + inputs +
                 ", irisType='" + irisType + '\'' +
                 '}';

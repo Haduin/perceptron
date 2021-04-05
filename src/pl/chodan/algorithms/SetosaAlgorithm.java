@@ -1,9 +1,11 @@
+package pl.chodan.algorithms;
+
+import pl.chodan.Data;
+
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
-public class SetosaAlgorithm {
+public class SetosaAlgorithm{
 
 
     private Data data;
@@ -19,7 +21,7 @@ public class SetosaAlgorithm {
 
 /*
 
-    public SetosaAlgorithm(Data data, List<Double> weights) {
+    public pl.chodan.algorithms.SetosaAlgorithm(pl.chodan.Data data, List<Double> weights) {
         this.data = data;
         this.weights = weights;
         this.d = generateDValue();
