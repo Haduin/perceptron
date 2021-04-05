@@ -4,58 +4,21 @@ import java.util.List;
 
 public class Perceptron {
 
-    List<Double> inputs;
-    List<Double> weights;
-    int y;
-    int d;
+
+    final List<Double> weights;
+    final int theta;
 
 
-    public Perceptron(List<Double> inputs, List<Double> weights, int y, int d) {
-        this.inputs = inputs;
+    public Perceptron(List<Double> weights, int theta) {
         this.weights = weights;
-        this.y = y;
-        this.d = d;
-    }
-
-    public List<Double> getInputs() {
-        return inputs;
-    }
-
-    public void setInputs(List<Double> inputs) {
-        this.inputs = inputs;
-    }
-
-    public List<Double> getWeights() {
-        return weights;
-    }
-
-    public void setWeights(List<Double> weights) {
-        this.weights = weights;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public int getD() {
-        return d;
-    }
-
-    public void setD(int d) {
-        this.d = d;
+        this.theta = theta;
     }
 
     @Override
     public String toString() {
-        return "pl.chodan.Perceptron{" +
-                "inputs=" + inputs +
-                ", weights=" + weights +
-                ", y=" + y +
-                ", d=" + d +
+        return "Perceptron{" +
+                "weights=" + weights +
+                ", theta=" + theta +
                 '}';
     }
 }

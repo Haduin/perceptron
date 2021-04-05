@@ -1,7 +1,7 @@
 package pl.chodan;
 
 import pl.chodan.algorithms.Algorithm;
-import pl.chodan.algorithms.SetosaAlgorithm;
+
 
 import java.util.List;
 import java.util.Map;
@@ -16,22 +16,39 @@ public class Tests {
         this.testData = testData;
         this.weightsForIrisType = weightsForIrisType;
         this.thetaForIrisType= thetaForIrisType;
+        
+        invokeTests();
+    }
+
+    private void invokeTests() {
+        
+        weightsForIrisType.forEach((irisType,v) -> performTestForIrisType(irisType,thetaForIrisType.get(irisType)));
+       
+        
+        
+    }
+
+    private void performTestForIrisType(String irisType, Integer theta) {
+        System.out.println();
+        System.out.printf("TEST FOR %s",irisType);
+        System.out.println();
+        Algorithm algorithm = new Algorithm(weightsForIrisType.get(irisType),irisType);
+        algorithm.setTheta(theta);
+
+
+        for (int i = 0; i < testData.size(); i++) {
+            algorithm.setData(testData.get(i));
+            algorithm.setD(1);
+            boolean yEqualsD = algorithm.isYEqualsD(testData.get(i));
+            System.out.println(testData.get(i).getIrisType() + ": " + yEqualsD);
+        }
+        System.out.println(algorithm.getWeights());//TODO wypisać procent
     }
 
 //    public void performTest() {
 //
 //
-//        SetosaAlgorithm setosaAlgorithm = new SetosaAlgorithm(weightsForIrisType.get("setosa"));
-//        setosaAlgorithm.setTheta(theta);
-//
-//
-//        for (int i = 0; i < testData.size(); i++) {
-//            setosaAlgorithm.setData(testData.get(i));
-//            setosaAlgorithm.setD(1);
-//            boolean yEqualsD = setosaAlgorithm.isYEqualsD(testData.get(i));
-//            System.out.println(testData.get(i).getIrisType() + ": " + yEqualsD);
-//        }
-//        System.out.println(setosaAlgorithm.getWeights());
+//       
 //
 //
 //    }

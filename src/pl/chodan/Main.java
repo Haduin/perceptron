@@ -29,6 +29,15 @@ public class Main {
         System.out.println(weightsForIrisType);
 //        System.out.println(pl.chodan.algorithms.SetosaAlgorithm.theta);
 
+        Scanner scanner = new Scanner(System.in);
+
+        while(scanner.nextLine().equals("end")){
+            System.out.println("podaj dane :");
+            String[] line = scanner.nextLine().split(" ");
+            
+
+        }
+
 
     }
 
