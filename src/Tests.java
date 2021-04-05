@@ -20,6 +20,8 @@ public class Tests {
             System.out.println(testData.get(i).getIrisType()+": "+yEqualsD);
 
         }
+        System.out.println(setosaAlgorithm.getWeights());
+
 
     }
 

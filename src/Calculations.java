@@ -28,7 +28,8 @@ public class Calculations {
             setosaAlgorithm.setData(dataList.get(i));
             setosaAlgorithm.setD(setosaAlgorithm.generateDValue());
             setosaAlgorithm.training();
-            for(int j=0; j<=4;j++){
+//            for(int j=0; j<=4;j++){
+            for(int j=0; j<=i;j++){
                 setosaAlgorithm.setData(dataList.get(j));
                 setosaAlgorithm.setD(setosaAlgorithm.generateDValue());
                 setosaAlgorithm.training();
@@ -38,6 +39,7 @@ public class Calculations {
             }
         }
          weightsForIrisType.put("setosa",setosaOutputWeights);
+
 
     }
 

@@ -23,6 +23,8 @@ public class Main {
         Map<String, List<Double>> weightsForIrisType = calculations.getWeightsForIrisType();
         Tests tests = new Tests(testData,weightsForIrisType);
         tests.performTest();
+        System.out.println(weightsForIrisType);
+        System.out.println(SetosaAlgorithm.theta);
 
 
     }

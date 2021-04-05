@@ -7,7 +7,7 @@ public class SetosaAlgorithm {
 
 
     private Data data;
-    private int theta=5;
+    public static int theta=5;
     private static String IRIS_TYPE="setosa";
     private List<Double> operationalWeights;
     private int y;
@@ -34,6 +34,10 @@ public class SetosaAlgorithm {
          while (!isYEqualsD(data)){
              relaculateWeights();
          }
+    }
+
+    public List<Double> getOperationalWeights() {
+        return operationalWeights;
     }
 
     public void relaculateWeights(){
