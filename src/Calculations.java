@@ -5,7 +5,9 @@ public class Calculations {
 
     private List<Data> dataList;
     private Map<String,List<Double>> weightsForIrisType = new HashMap<>();
+    private int theta;
     List<Double> weights = new ArrayList<>();
+
 
     public Calculations(List<Data> data) {
         dataList = data;
@@ -28,6 +30,13 @@ public class Calculations {
             setosaAlgorithm.setData(dataList.get(i));
             setosaAlgorithm.setD(setosaAlgorithm.generateDValue());
             setosaAlgorithm.training();
+
+            /**
+             * 1. recalculateWeight -> (dla d=1) -> y!=d
+             *
+             *
+             */
+
 //            for(int j=0; j<=4;j++){
             for(int j=0; j<=i;j++){
                 setosaAlgorithm.setData(dataList.get(j));
@@ -36,14 +45,21 @@ public class Calculations {
             }
             if (i==dataList.size()-1){
                 setosaOutputWeights = setosaAlgorithm.getWeights();
+                this.theta = setosaAlgorithm.gettheta();
             }
         }
          weightsForIrisType.put("setosa",setosaOutputWeights);
+
+
 
 
     }
 
     public Map<String, List<Double>> getWeightsForIrisType() {
         return weightsForIrisType;
+    }
+
+    public int getTheta() {
+        return theta;
     }
 }

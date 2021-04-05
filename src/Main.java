@@ -21,10 +21,11 @@ public class Main {
 
         Calculations calculations = new Calculations(trainingData);
         Map<String, List<Double>> weightsForIrisType = calculations.getWeightsForIrisType();
-        Tests tests = new Tests(testData,weightsForIrisType);
+        int theta = calculations.getTheta();
+        Tests tests = new Tests(testData,weightsForIrisType,theta);
         tests.performTest();
         System.out.println(weightsForIrisType);
-        System.out.println(SetosaAlgorithm.theta);
+//        System.out.println(SetosaAlgorithm.theta);
 
 
     }

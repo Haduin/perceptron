@@ -7,7 +7,7 @@ public class SetosaAlgorithm {
 
 
     private Data data;
-    public static int theta=5;
+    private  int theta=50;
     private static String IRIS_TYPE="setosa";
     private List<Double> operationalWeights;
     private int y;
@@ -80,5 +80,13 @@ public class SetosaAlgorithm {
 
     public void setD(int d) {
         this.d = d;
+    }
+
+    public int gettheta() {
+        return theta;
+    }
+
+    public void setTheta(int theta) {
+        this.theta = theta;
     }
 }
