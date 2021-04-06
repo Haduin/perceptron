@@ -24,10 +24,7 @@ public class Main {
         Calculations calculations = new Calculations(trainingData);
         Map<String, List<Double>> weightsForIrisType = calculations.getWeightsForIrisType();
         Map<String, Integer> thetaForIrisType = calculations.getThetaForIrisType();
-        Tests tests = new Tests(testData,weightsForIrisType,thetaForIrisType);
-//        tests.performTest();
-        System.out.println(weightsForIrisType);
-//        System.out.println(pl.chodan.algorithms.SetosaAlgorithm.theta);
+        new Tests(testData,weightsForIrisType,thetaForIrisType);
 
         Scanner scanner = new Scanner(System.in);
 
