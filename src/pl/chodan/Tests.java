@@ -42,7 +42,7 @@ public class Tests {
             boolean yEqualsD = algorithm.isYEqualsD(testData.get(i));
             System.out.println(testData.get(i).getIrisType() + ": " + yEqualsD);
         }
-        System.out.println(algorithm.getWeights());//TODO wypisać procent
+        System.out.println(algorithm.getWeights());
     }
 
 //    public void performTest() {

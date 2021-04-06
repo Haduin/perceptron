@@ -1,5 +1,7 @@
 package pl.chodan;
 
+
+
 import pl.chodan.algorithms.Algorithm;
 
 import java.util.*;

@@ -2,10 +2,7 @@ package pl.chodan;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -31,10 +28,67 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        while(scanner.nextLine().equals("end")){
+        List<Double> doubles;
+        Integer theta;
+        String[] lines;
+        String line = scanner.nextLine();
+        int k =0;
+        while(!line.equals("end")){
+
             System.out.println("podaj dane :");
-            String[] line = scanner.nextLine().split(" ");
-            
+            lines = scanner.nextLine().replace(",",".").split(" ");
+
+
+             doubles= weightsForIrisType.get("Iris-virginica");
+                theta    = thetaForIrisType.get("Iris-virginica");
+
+            double net = 0;
+
+            for(int i = 0;i< lines.length-1;i++){
+                net+=Double.parseDouble(lines[i])*doubles.get(i);
+            }
+            if(net-theta>=0){
+                System.out.println("Iris-virginica");
+                k++;
+            }
+
+
+            doubles = weightsForIrisType.get("Iris-setosa");
+            theta = thetaForIrisType.get("Iris-setosa");
+             net = 0;
+
+            for(int i = 0;i< lines.length-1;i++){
+                net+=Double.parseDouble(lines[i])*doubles.get(i);
+            }
+            if(net-theta>=0){
+                System.out.println("Iris-setosa");
+                k++;
+            }
+
+
+
+            doubles = weightsForIrisType.get("Iris-versicolor");
+            theta = thetaForIrisType.get("Iris-versicolor");
+             net = 0;
+
+            for(int i = 0;i< lines.length-1;i++){
+                net+=Double.parseDouble(lines[i])*doubles.get(i);
+            }
+            if(net-theta>=0){
+                System.out.println("Iris-versicolor");
+                k++;
+            }
+
+            if(k==0)
+                System.out.println("brak dopasowania");
+            System.out.println("Zakończyć ? Wpisz 'end'");
+            line = scanner.nextLine();
+
+
+//            System.out.println(weightsForIrisType);
+//            System.out.println(thetaForIrisType);
+
+
 
         }
 
