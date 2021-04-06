@@ -57,8 +57,6 @@ public class Tests {
             boolean yEqualsD = algorithm.isYEqualsD(testData.get(i));
             clasifications.add(new Classification(testData.get(i).getIrisType(),yEqualsD));
         }
-
-
         System.out.println("Liczba prawidłowo zaklasyfikowanych przykładów testowych:");
         int quantityOfMatchedValues = calculateProperClassification(clasifications, testData, irisType);
         System.out.println(String.format("%d / %d (Procentowo: %s",quantityOfMatchedValues,clasifications.size(), String.format("%.2f",quantityOfMatchedValues* 100.0 /clasifications.size()))+"%)");
